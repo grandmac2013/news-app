@@ -78,3 +78,10 @@ gem "activeadmin", "~> 3.0"
 gem "devise", "~> 4.9"
 
 gem 'sassc-rails'
+
+gem 'carrierwave'
+
+gem 'httparty'
+gem "rspec-rails"
+gem "factory_bot_rails"
+gem "faker"

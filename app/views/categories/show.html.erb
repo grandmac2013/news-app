@@ -1,0 +1,35 @@
+<br>
+<br>
+<h1 class="text-center"><%= @category.name %> News</h1>
+<div class="container">
+  <div class ="row">
+    <% @news.each_with_index do |news, index| %>
+      <div class="card col-lg-4 col-md-6 col-sm-12 article">
+
+        <span
+          data-url="<%= news.title %>"
+          class="article-title"
+          id="article-<%= index %>"
+          title="<%= news.title%>"
+          style="font-weight: bold;"
+        >
+            <%= news.title %>
+        </span>
+
+        <span><%= news.title %></span>
+        <%= image_tag(news.image.url || @image_placeholder, class: 'card-img-top') %>
+        <div class="card-body">
+          <h5 class="card-title"><% news.title %></h5>
+          <p class="card-text"> <%= news.content %></p>
+        </div>
+        <%# if current_user %>
+        <!--          <i data-article-key="<%#= article_key %>"  class="far fa-bookmark bookmark" data-toggle="modal" data-target="#create-bookmark"></i>-->
+        <%# end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# if current_user %>
+<%#= render 'bookmark' %>
+<%# end %>
